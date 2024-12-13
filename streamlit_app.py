@@ -134,7 +134,7 @@ if st.button("Predict"):
     if prediction >= 0.5:
         st.write("### 폐암 관련 컨텐츠.")
         st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP1OnNiwdiS2sev9VS9aVyqhqUAy_R44TuS4coyyko4w&s", caption="Low Segment Image 1")
-        st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")  # YouTube 썸네일
+        st.video("https://www.youtube.com/watch?v=AIkriQweg5k")  # YouTube 썸네일
         st.text("Description for Low Segment 1")
     if prediction <=0.5:
         st.write("### 폐암 관련 컨텐츠2.")

@@ -10,8 +10,8 @@ import numpy as np  # numpy를 import해야 함
 st.title("주택 가격 예측 서비스!")
 
 # GitHub Raw 파일 URL과 모델 유형
-GITHUB_RAW_URL = ""
-MODEL_TYPE = ""  # "fastai", "scikit-learn Random Forest", or "XGBoost"
+GITHUB_RAW_URL = "https://github.com/sunseokho/life-percent22/raw/refs/heads/main/xgb_model.pkl"
+MODEL_TYPE = "XGBoost"  # "fastai", "scikit-learn Random Forest", or "XGBoost"
 CSV_FILE_URL = ""
 
 # GitHub에서 파일 다운로드 및 로드

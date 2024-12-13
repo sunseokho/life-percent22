@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np  # numpy를 import해야 함
 
 # Streamlit 제목
-st.title("주택 가격 예측 서비스!")
+st.title("폐암 생존율")
 
 # GitHub Raw 파일 URL과 모델 유형
 GITHUB_RAW_URL = "https://github.com/sunseokho/life-percent22/raw/refs/heads/main/xgb_model.pkl"
@@ -126,65 +126,18 @@ if st.button("Predict"):
 
         # 결과 출력
         y_name = model.get("y_names", ["Prediction"])[0]
-        st.success(f"{y_name}: {prediction}")
+        st.success(f"예상 사망확률 : {prediction:.2f}%")
     except Exception as e:
         st.error(f"Error during prediction: {e}")
 
 # 예측 결과에 따라 콘텐츠 표시
-if prediction!=0:
-    if prediction <= 60000:
-        st.write("### Prediction Result: Low Price Segment")
-        col1, col2, col3 = st.columns(3)
-
-        with col1:
-            st.image("https://via.placeholder.com/300", caption="Low Segment Image 1")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")  # YouTube 썸네일
-            st.text("Description for Low Segment 1")
-
-        with col2:
-            st.image("https://via.placeholder.com/300", caption="Low Segment Image 2")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            st.text("Description for Low Segment 2")
-
-        with col3:
-            st.image("https://via.placeholder.com/300", caption="Low Segment Image 3")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            st.text("Description for Low Segment 3")
-
-    elif 60000 < prediction <= 120000:
-        st.write("### Prediction Result: Medium Price Segment")
-        col1, col2, col3 = st.columns(3)
-
-        with col1:
-            st.image("https://via.placeholder.com/300", caption="Medium Segment Image 1")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            st.text("Description for Medium Segment 1")
-
-        with col2:
-            st.image("https://via.placeholder.com/300", caption="Medium Segment Image 2")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            st.text("Description for Medium Segment 2")
-
-        with col3:
-            st.image("https://via.placeholder.com/300", caption="Medium Segment Image 3")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            st.text("Description for Medium Segment 3")
-
+    if prediction >= 0.5:
+        st.write("### 폐암 관련 컨텐츠.")
+        st.image("https://via.placeholder.com/300", caption="Low Segment Image 1")
+        st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")  # YouTube 썸네일
+        st.text("Description for Low Segment 1")
     else:
-        st.write("### Prediction Result: High Price Segment")
-        col1, col2, col3 = st.columns(3)
-
-        with col1:
-            st.image("https://via.placeholder.com/300", caption="High Segment Image 1")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            st.text("Description for High Segment 1")
-
-        with col2:
-            st.image("https://via.placeholder.com/300", caption="High Segment Image 2")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            st.text("Description for High Segment 2")
-
-        with col3:
-            st.image("https://via.placeholder.com/300", caption="High Segment Image 3")
-            st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-            st.text("Description for High Segment 3")
+        st.write("### 폐암 관련 컨텐츠.")
+        st.image("https://via.placeholder.com/300", caption="Low Segment Image 1")
+        st.video("https://www.youtube.com/watch?v=dQw4w9WgXcQ")  # YouTube 썸네일
+        st.text("Description for Low Segment 1")

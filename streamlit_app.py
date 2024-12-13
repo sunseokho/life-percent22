@@ -126,7 +126,7 @@ if st.button("Predict"):
 
         # 결과 출력
         y_name = model.get("y_names", ["Prediction"])[0]
-        st.success(f"예상 사망확률 : {prediction:.2f}%")
+        st.success(f"예상 사망확률 : {prediction*100:.2f}%")
     except Exception as e:
         st.error(f"Error during prediction: {e}")
 
